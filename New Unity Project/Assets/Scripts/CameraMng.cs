@@ -29,7 +29,6 @@ public class CameraMng : MonoBehaviour {
     void Update()
     {
         Vector3 angles = transform.localEulerAngles;
-        Debug.Log(angles.x);
 
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
