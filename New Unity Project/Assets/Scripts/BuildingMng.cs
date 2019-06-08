@@ -113,6 +113,7 @@ public class BuildingMng : MonoBehaviour
 
                     center /= (num*num);
                     Build(center + new Vector3(0,0.5f,0));
+                    GetComponentInParent<ResourceMng>().updateRes(selectedData.costRes);
                 }
                 
                 
@@ -124,7 +125,7 @@ public class BuildingMng : MonoBehaviour
     void Build(Vector3 position)
     {
         GameObject.Instantiate(selectedData.buildingPrefab, position, Quaternion.identity);
-        GameObject effect = GameObject.Instantiate(selectedData.buildEffect, position, Quaternion.identity);
+        GameObject effect = GameObject.Instantiate(selectedData.buildEffect, position, Quaternion.Euler(-90, 0, 0));
         Destroy(effect, 2.5f);
     }
 }

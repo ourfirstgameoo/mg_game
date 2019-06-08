@@ -13,6 +13,7 @@ public class BuildingData
     public BuildingType type;
     public int buildingMaskUnits;
     public GameObject buildEffect;
+    public int[] costRes = new int[4];
 
 }
 
