@@ -61,7 +61,6 @@ public class BuildingMng : MonoBehaviour
         {
             if ( Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Map")))
             {
-                Debug.Log("HERE!!");
 
                 ///-5.-25;-5,-30,-10,-25;-10,-30
                 //-7.5,-27.5
@@ -100,15 +99,14 @@ public class BuildingMng : MonoBehaviour
                 }
                 if(isValid == true)
                 {
-                    Debug.Log("HERER!!!!!" + selectPosition.Length);
                     Vector3 center= new Vector3(0,0,0);
                    for( int k = 0; k < selectPosition.Length; k++)
                     {
+                        selectPosition[k].buildingOn = true;
                         selectPosition[k].highlight();
                         center += selectPosition[k].transform.position;
 
                     }
-                    Debug.Log("GREEN!!!");
 
                     center /= (num*num);
                     Build(center + new Vector3(0,0.5f,0));
