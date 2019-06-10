@@ -4,20 +4,35 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int damage = 50;
-    public float speed = 50;
+    protected int damage = 1;
+    protected float speed;     
     private Transform target;
-    
+
+    private void Start()
+    {
+        setSpeed(30);
+    }
     public void setTatget(Transform _target)
     {
         this.target = _target;
     }
-    
+
+    public void setSpeed(float _speed)
+    {
+        this.speed = _speed;
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (target == null) return;
         transform.LookAt(target.position);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("here father");
+
     }
 }

@@ -32,4 +32,14 @@ public class Enemy : MonoBehaviour
             index++;
         }
     }
+
+    public void takeDamage(int damage)
+    {
+
+    }
+    
+    void changeSpeed(float speed)
+    {
+
+    }
 }

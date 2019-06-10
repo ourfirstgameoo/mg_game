@@ -107,7 +107,6 @@ public class BuildingMng : MonoBehaviour
                         selectPosition[k].highlight();
                         center += selectPosition[k].transform.position;
 
-
                     }
                     Debug.Log("GREEN!!!");
 
