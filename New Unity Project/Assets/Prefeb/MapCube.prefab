@@ -104,4 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20faee36b04929749962993ad570d794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingOn: {fileID: 0}
+  selectedPrefab: {fileID: 0}
+  buildingOn: 0

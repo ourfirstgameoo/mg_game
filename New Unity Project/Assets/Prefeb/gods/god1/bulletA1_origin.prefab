@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4648261882983585325}
   - component: {fileID: 4648261882983585324}
   - component: {fileID: 4648261882983585323}
-  - component: {fileID: 4648261882983585326}
   - component: {fileID: 5555475055251665337}
+  - component: {fileID: 4263584541863995046}
   m_Layer: 0
   m_Name: bulletA1_origin
   m_TagString: Untagged
@@ -93,18 +93,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4648261882983585326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4648261882983585321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258d52aa82ce7d143aac59a55396ee34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &5555475055251665337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -120,4 +108,18 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!114 &4263584541863995046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648261882983585321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc67f1c8185f7440be6013a7a2ccb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffectPrefab: {fileID: 3229325046541047276, guid: d58455762e824a841ab67d23e5ed52cb,
+    type: 3}

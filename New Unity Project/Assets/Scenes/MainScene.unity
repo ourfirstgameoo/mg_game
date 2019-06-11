@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9882,7 +9882,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4204036627030197907, guid: 16d725768e1592245a3262c3f29716bd,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 4648261882983585321, guid: 2553872b4424bd94aba438a1854a0916,
+        type: 3}
+    m_RemovedComponents:
+    - {fileID: 4754964525358265593, guid: 16d725768e1592245a3262c3f29716bd, type: 3}
+    - {fileID: 6700797195262237687, guid: 16d725768e1592245a3262c3f29716bd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 16d725768e1592245a3262c3f29716bd, type: 3}
 --- !u!4 &257024218 stripped
 Transform:
@@ -48261,6 +48269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: godA2_debuff_slow
       objectReference: {fileID: 0}
+    - target: {fileID: 1946999710835126752, guid: 6ad7c56a973b4ed4b8a621ad9bc2c433,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1327539828305936741, guid: 6ad7c56a973b4ed4b8a621ad9bc2c433,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -49466,6 +49479,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 426609734597037540, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
+        type: 3}
+      propertyPath: selectedPrefab
+      value: 
+      objectReference: {fileID: 7714398622920680022, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b05ed6c43b0b2540b4fe06b606918e2, type: 3}
 --- !u!1001 &1304931665
@@ -79354,6 +79373,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 426609734597037540, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
+        type: 3}
+      propertyPath: selectedPrefab
+      value: 
+      objectReference: {fileID: 7714398622920680022, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b05ed6c43b0b2540b4fe06b606918e2, type: 3}
 --- !u!4 &8067928221244206456 stripped

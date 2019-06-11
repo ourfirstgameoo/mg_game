@@ -6,7 +6,7 @@ public class godA : MonoBehaviour
 {
     // Start is called before the first frame update
     private List<GameObject> enemys = new List<GameObject>();
-    public float rate= 1;
+    public float rate = 1;
     private float timer = 0;
     public GameObject bulletPrefab;
     public Transform firePos;
@@ -30,21 +30,62 @@ public class godA : MonoBehaviour
     //rate-> attackRate
     private void Update()
     {
-        if (timer > 0)
-            timer -= Time.deltaTime;
-        if (timer <= rate && enemys.Count > 0)
+        timer += Time.deltaTime;
+        if(enemys.Count > 0 && timer > rate)
         {
+            timer = 0;
             doSomething();
-            timer += rate;
-        }        
+        }
+        // if (timer > 0)
+        //     timer -= Time.deltaTime;
+        // if (timer <= rate && enemys.Count > 0)
+        // {
+        //     doSomething();
+        //     timer += rate;
+        // }  
+        //头部转向敌人      
+        // if(enemys.Count > 0 &&enemys[0] != null)
+        // {
+        //     Vector3 targetPosition = enemys[0].transform.position;
+        //     targetPosition.y = head
+        // }
     }
 
     //attack
     void doSomething()
     {
-        Debug.Log("here!!!!!!");
-         GameObject bullet = GameObject.Instantiate(bulletPrefab, firePos.position, firePos.rotation);
-         bullet.GetComponent<Bullet>().setTatget(enemys[0].transform);
+        Debug.Log("attack");
+        if(enemys[0] == null)
+        {
+            UpdateEnemys();
+        }
+        if(enemys.Count > 0)
+        {
+            GameObject bullet = GameObject.Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+            bullet.GetComponent<Bullet>().setTatget(enemys[0].transform);
+        }
+        else
+        {
+            timer = rate;
+        }
         
+        
+    }
+
+    void UpdateEnemys()
+    {
+        List<int> emptyIndex = new List<int>();
+        for (int index = 0; index < enemys.Count; index++)
+        {
+            if (enemys[index] == null)
+            {
+                emptyIndex.Add(index);
+            }
+        }
+
+        for (int i = 0; i < emptyIndex.Count; i++)
+        {
+            enemys.RemoveAt(emptyIndex[i]-i);
+        }
     }
 }

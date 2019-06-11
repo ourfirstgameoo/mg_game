@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MapCube : MonoBehaviour
 {
@@ -20,4 +21,22 @@ public class MapCube : MonoBehaviour
         this.buildingOn = true;
     }
 
+    //鼠标放上去变绿色
+    // void OnMouseEnter()
+    // {
+    //     Debug.Log("OnMouseEnter");
+    //     if(buildingOn == false && EventSystem.current.IsPointerOverGameObject() == false)
+    //     {
+    //         renderer.material.color = Color.green;
+    //     }
+    // }
+
+    // void OnMouseExit()
+    // {
+    //     Debug.Log("OnMouseExit");
+    //     if(buildingOn == false && EventSystem.current.IsPointerOverGameObject() == false)
+    //     {
+    //         renderer.material.color = Color.white;
+    //     }
+    // }
 }

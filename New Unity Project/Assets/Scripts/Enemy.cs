@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,11 +11,17 @@ public class Enemy : MonoBehaviour
     public float speed = 10;
     public string type = "path_a";
     public int randPathNum = 2;
+    private int totalHp;
+    public int hp = 2;
+    public GameObject explosionEffect;
+    public Slider hpSlider;
+
     void Start()
     {
         int randpath = Random.Range(0,randPathNum);
         WavePoints a = GameObject.Find(type + randpath.ToString()).GetComponent<WavePoints>();
         positions = a.positions;
+        totalHp = hp;
     }
 
     // Update is called once per frame
@@ -35,11 +42,28 @@ public class Enemy : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-
+        Debug.Log(hp);
+        if(hp <= 0) return;
+        hp -= damage;
+        Debug.Log(hp);
+        hpSlider.value = (float)hp / totalHp;
+        if(hp <= 0)
+        {
+            Debug.Log("die");
+            Die();
+        }
+        Debug.Log(hp);
     }
     
     void changeSpeed(float speed)
     {
 
+    }
+
+    void Die()
+    {
+        GameObject effect = GameObject.Instantiate(explosionEffect, transform.position, transform.rotation);
+        Destroy(effect, 1);
+        Destroy(this.gameObject);
     }
 }

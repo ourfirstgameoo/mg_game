@@ -6,11 +6,11 @@ public class Bullet : MonoBehaviour
 {
     protected int damage = 1;
     protected float speed;     
-    private Transform target;
+    protected Transform target;
 
     private void Start()
     {
-        setSpeed(30);
+        setSpeed(40);
     }
     public void setTatget(Transform _target)
     {
@@ -23,16 +23,12 @@ public class Bullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (target == null) return;
-        transform.LookAt(target.position);
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
+    
 
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("here father");
-
     }
+
+
 }
