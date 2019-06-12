@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    private List<GameObject> gods = new List<GameObject>();
+    public List<GameObject> gods = new List<GameObject>();
     // public GameObject selectedPrefab;
     // private new Renderer renderer;
 
@@ -17,7 +17,6 @@ public class Building : MonoBehaviour
     {
         gods.Add(god);
         Debug.Log(gods.Count);
-
     }
 
     // public void highlight()

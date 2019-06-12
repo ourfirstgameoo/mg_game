@@ -54,7 +54,7 @@ public class godA : MonoBehaviour
     //attack
     void doSomething()
     {
-        Debug.Log("attack");
+        // Debug.Log("attack");
         if(enemys[0] == null)
         {
             UpdateEnemys();

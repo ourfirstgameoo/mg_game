@@ -33469,6 +33469,7 @@ MonoBehaviour:
     buildEffect: {fileID: 8328076831073575422, guid: 1090b4c2b11129941ba5c930a8465395,
       type: 3}
     costRes: 05000000060000000500000007000000
+  buttonCtrl: {fileID: 859713046}
 --- !u!114 &859713044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33510,6 +33511,7 @@ MonoBehaviour:
     GuardPrefab: {fileID: 8579103825948797309, guid: eb3d19dbdc21aa247a5d018020b16ac1,
       type: 3}
     type: 2
+  buttonCtrl: {fileID: 859713046}
 --- !u!114 &859713046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33525,6 +33527,8 @@ MonoBehaviour:
   canvas:
   - {fileID: 1158622045}
   - {fileID: 1062527763}
+  BuildingOn: 0
+  GodOn: 0
 --- !u!4 &861672017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4006661023931755824, guid: c98a1b918e182c8469bee60d6850a9e9,
@@ -49376,6 +49380,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3696179740685665267, guid: 6ad7c56a973b4ed4b8a621ad9bc2c433,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2749468461623142858, guid: a17235ccf0d4f644fa77d13f1e82dfd4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ad7c56a973b4ed4b8a621ad9bc2c433, type: 3}
 --- !u!1001 &1277170607

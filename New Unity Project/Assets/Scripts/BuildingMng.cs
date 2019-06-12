@@ -10,27 +10,22 @@ public class BuildingMng : MonoBehaviour
     public BuildingData blueData;
 
     private BuildingData selectedData;
-
+    public ButtonCtrl buttonCtrl;
 
     public void OnRedSelected(bool isOn)
     {
         if (isOn)
         {
-
             this.selectedData = redData;
-
         }
     }
 
     public void OnBlueSelected(bool isOn)
     {
-
         if (isOn)
         {
 //            Debug.Log("IM ONONONOBLUE123123123");
-
             this.selectedData = blueData;
-
         }
     }
 
@@ -39,7 +34,6 @@ public class BuildingMng : MonoBehaviour
         if (isOn)
         {
             this.selectedData = blackData;
-
         }
     }
     // Start is called before the first frame update
@@ -50,20 +44,14 @@ public class BuildingMng : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
     {
-
-
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false && buttonCtrl.BuildingOn)
         {
             if ( Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Map")))
             {
-
-                ///-5.-25;-5,-30,-10,-25;-10,-30
-                //-7.5,-27.5
                 float a = hit.point.x ;
                 float b = hit.point.z ;
                 int[][] coordinate = new int[3][] { new int[] { 0 }, new int[] { 1, -1 }, new int[] { -1, 0, 1 } };
@@ -95,26 +83,20 @@ public class BuildingMng : MonoBehaviour
                     }
                     if (isValid == false)
                         break;
-
                 }
                 if(isValid == true)
                 {
-                    Vector3 center= new Vector3(0,0,0);
+                    Vector3 center = new Vector3(0,0,0);
                    for( int k = 0; k < selectPosition.Length; k++)
                     {
                         selectPosition[k].buildingOn = true;
                         selectPosition[k].highlight();
                         center += selectPosition[k].transform.position;
-
                     }
-
                     center /= (num*num);
                     Build(center + new Vector3(0,0.5f,0));
                     GetComponentInParent<ResourceMng>().updateRes(selectedData.costRes);
                 }
-                
-                
-                     
             }
         }
     }

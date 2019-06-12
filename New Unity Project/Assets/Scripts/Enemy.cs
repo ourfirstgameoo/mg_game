@@ -42,17 +42,17 @@ public class Enemy : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        Debug.Log(hp);
+        // Debug.Log(hp);
         if(hp <= 0) return;
         hp -= damage;
-        Debug.Log(hp);
+        // Debug.Log(hp);
         hpSlider.value = (float)hp / totalHp;
         if(hp <= 0)
         {
-            Debug.Log("die");
+            // Debug.Log("die");
             Die();
         }
-        Debug.Log(hp);
+        // Debug.Log(hp);
     }
     
     void changeSpeed(float speed)

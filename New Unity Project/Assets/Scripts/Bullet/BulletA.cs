@@ -12,9 +12,9 @@ public class BulletA : Bullet
     {
         if (other.tag == "Enemy")
         {
-            Debug.Log("takeDamage");
+            // Debug.Log("takeDamage");
             other.GetComponent<Enemy>().takeDamage(damage);
-            Debug.Log("bullet going to die");
+            // Debug.Log("bullet going to die");
             Die();
         }
     }
@@ -32,7 +32,7 @@ public class BulletA : Bullet
 
     void Die()
     {
-        Debug.Log("bullet die");
+        // Debug.Log("bullet die");
         GameObject effect = GameObject.Instantiate(explosionEffectPrefab, transform.position, transform.rotation);
         Destroy(effect, 1);
         Destroy(this.gameObject);

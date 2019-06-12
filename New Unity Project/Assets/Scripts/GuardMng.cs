@@ -10,8 +10,7 @@ public class GuardMng : MonoBehaviour
     public GuardData Guard3rd;
 
     private GuardData guardData;
-
-
+    public ButtonCtrl buttonCtrl;
 
     public void OnGuard1Selected(bool isOn)
     {
@@ -38,23 +37,22 @@ public class GuardMng : MonoBehaviour
     }
     // Start is called before the first frame update
 
-
     // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false && buttonCtrl.GodOn)
         {
             if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Building")))
             {
-                Debug.Log(hit.collider);
-                // RaycastHit checkhit;
                 Building building = hit.collider.GetComponentInParent<Building>();
-                if (building == null)
-                    return;
 
+                if (building == null){
+                    Debug.Log("building is none");
+                    return;
+                }
                 building.addGod(guardData.GuardPrefab);
             }
         }
