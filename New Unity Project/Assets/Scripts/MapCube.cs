@@ -15,11 +15,11 @@ public class MapCube : MonoBehaviour
         renderer = GetComponent<Renderer>();    
     }
 
-    public void highlight()
-    {
-        renderer.material.color = Color.green;
-        this.buildingOn = true;
-    }
+    // public void highlight()
+    // {
+    //     renderer.material.color = Color.green;
+    //     this.buildingOn = true;
+    // }
 
     //鼠标放上去变绿色
     // void OnMouseEnter()

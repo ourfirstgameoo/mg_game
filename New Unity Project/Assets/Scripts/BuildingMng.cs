@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class BuildingMng : MonoBehaviour
 {
     public BuildingData redData;
-    public BuildingData blackData;
     public BuildingData blueData;
+    public BuildingData blackData;
 
     private BuildingData selectedData;
     public ButtonCtrl buttonCtrl;
@@ -90,7 +90,7 @@ public class BuildingMng : MonoBehaviour
                    for( int k = 0; k < selectPosition.Length; k++)
                     {
                         selectPosition[k].buildingOn = true;
-                        selectPosition[k].highlight();
+                        // selectPosition[k].highlight();
                         center += selectPosition[k].transform.position;
                     }
                     center /= (num*num);
@@ -103,7 +103,21 @@ public class BuildingMng : MonoBehaviour
     
     void Build(Vector3 position)
     {
-        GameObject.Instantiate(selectedData.buildingPrefab, position, Quaternion.identity);
+        Quaternion roration = Quaternion.identity;
+        Vector3 pos = position;
+        if(selectedData.buildingMaskUnits == 1)
+            pos.z += 1;
+        else if(selectedData.buildingMaskUnits == 3)
+        {
+            Debug.Log(position);
+            pos.y += 0.5f;
+            pos.x += 8.9f;
+            pos.z += 35;
+            roration.x += 1;
+            // pos.z -= 0.5f;
+        }
+        roration.x -= 1;
+        GameObject.Instantiate(selectedData.buildingPrefab, pos, roration);
         GameObject effect = GameObject.Instantiate(selectedData.buildEffect, position, Quaternion.Euler(-90, 0, 0));
         Destroy(effect, 2.5f);
     }

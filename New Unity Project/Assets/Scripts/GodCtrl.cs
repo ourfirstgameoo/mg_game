@@ -48,4 +48,5 @@ public class GodCtrl : MonoBehaviour
     		Debug.Log(buildings[i].transform);
     	}
     }
+    
 }
