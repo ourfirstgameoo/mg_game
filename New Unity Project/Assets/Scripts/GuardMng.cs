@@ -12,6 +12,9 @@ public class GuardMng : MonoBehaviour
     private GuardData guardData;
     public ButtonCtrl buttonCtrl;
 
+    public List<GameObject> totalgods = new List<GameObject>();
+
+
     public void OnGuard1Selected(bool isOn)
     {
         if (isOn)
@@ -53,15 +56,32 @@ public class GuardMng : MonoBehaviour
                     Vector3 pos = building.transform.position;
                     pos.y += 5;
                     // building.transform.position.y += 20;
-                    GameObject.Instantiate(guardData.GuardPrefab, pos, Quaternion.identity);
+                    GameObject obj  = GameObject.Instantiate(guardData.GuardPrefab, pos, Quaternion.identity);
 
                     if (building == null){
                         Debug.Log("building is none");
                         return;
                     }
                     building.addGod(guardData.GuardPrefab);
+                    totalgods.Add(obj);
                 }
             }
+        }
+    }
+
+    public void godAwake()
+    {
+        for(int i = 0; i < totalgods.Count; i++)
+        {
+            totalgods[i].SetActive(true);
+        }  
+    }
+
+    public void godSleep()
+    {
+        for (int i = 0; i < totalgods.Count; i++)
+        {
+            totalgods[i].SetActive(true);
         }
     }
 }
