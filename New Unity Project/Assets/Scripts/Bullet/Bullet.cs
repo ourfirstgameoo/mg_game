@@ -22,9 +22,6 @@ public class Bullet : MonoBehaviour
         this.speed = _speed;
     }
 
-    // Update is called once per frame
-    
-
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("here father");

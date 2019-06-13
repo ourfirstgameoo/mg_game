@@ -12,9 +12,7 @@ public class BulletA : Bullet
     {
         if (other.tag == "Enemy")
         {
-            // Debug.Log("takeDamage");
             other.GetComponent<Enemy>().takeDamage(damage);
-            // Debug.Log("bullet going to die");
             Die();
         }
     }

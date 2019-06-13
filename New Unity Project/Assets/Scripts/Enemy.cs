@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
     public float speed = 10;
     public string type = "path_a";
     public int randPathNum = 2;
-    private int totalHp;
-    public int hp = 2;
+    private float totalHp;
+    public float hp = 5;
     public GameObject explosionEffect;
     public Slider hpSlider;
 
@@ -39,19 +39,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void takeDamage(int damage)
+    public void takeDamage(float damage)
     {
-        // Debug.Log(hp);
         if(hp <= 0) return;
         hp -= damage;
-        // Debug.Log(hp);
-        hpSlider.value = (float)hp / totalHp;
+        hpSlider.value = hp / totalHp;
         if(hp <= 0)
         {
-            // Debug.Log("die");
             Die();
         }
-        // Debug.Log(hp);
     }
     
     void changeSpeed(float speed)

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class slowdebuff : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private List<Enemy> enemys = new List<Enemy>();
+    private float timer = 0;
+    private double rate = 0.5;
 
 
     // Update is called once per frame
@@ -12,14 +14,28 @@ public class slowdebuff : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.gameObject.GetComponent<Enemy>().speed /= 1.2f;
+            other.gameObject.GetComponent<Enemy>().speed /= 2f;
+            enemys.Add(other.gameObject.GetComponent<Enemy>());
         }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Enemy")
         {
-            other.gameObject.GetComponent<Enemy>().speed *= 1.2f;
+            other.gameObject.GetComponent<Enemy>().speed *= 2f;
+            enemys.Remove(other.gameObject.GetComponent<Enemy>());
+        }
+    }
+    private void Update()
+    {
+        // Debug.Log("Update!!!");
+        timer += Time.deltaTime;
+        if(enemys.Count > 0 && timer > rate)
+        {
+            timer = 0;
+            Debug.Log("damage!!!");
+            for(int i=0; i < enemys.Count; i++)
+                enemys[i].takeDamage((float)rate);
         }
     }
 }

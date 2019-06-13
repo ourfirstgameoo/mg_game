@@ -33518,8 +33518,7 @@ MonoBehaviour:
     GuardPrefab: {fileID: 100166, guid: 480c6417e8e5c344b85e4171baebf5c8, type: 3}
     type: 0
   Guard2nd:
-    GuardPrefab: {fileID: 3526233518038014350, guid: 204c5db1a276d6944b40babb8ac6324a,
-      type: 3}
+    GuardPrefab: {fileID: 100124, guid: 7b5431b96d406ac42b8019dcd8ae07ee, type: 3}
     type: 1
   Guard3rd:
     GuardPrefab: {fileID: 8579103825948797309, guid: eb3d19dbdc21aa247a5d018020b16ac1,
