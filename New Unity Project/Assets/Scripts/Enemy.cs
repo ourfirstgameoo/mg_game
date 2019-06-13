@@ -37,7 +37,8 @@ public class Enemy : MonoBehaviour
     void Move()
     {
         if (index > positions.Length - 1) return;
-        transform.Translate((positions[index].position - transform.position).normalized * Time.deltaTime * speed);
+        transform.LookAt(positions[index]);
+        transform.Translate(0,0, Time.deltaTime * speed);
         // enemy.transform.LookAt(positions[index].position);
         // Vector3 targetPosition = positions[index].position;
         // targetPosition.y = enemy.transform.position.y;

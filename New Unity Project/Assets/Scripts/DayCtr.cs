@@ -21,6 +21,8 @@ public class DayCtr : MonoBehaviour
             // Debug.Log("isNight");
             isNight = true;
             GameObject.Find("gameMng").GetComponent<GuardMng>().godAwake();
+            GameObject.Find("gameMng").GetComponent<EnemySpawner>().enemyAwake();
+
         }
     }
 }
