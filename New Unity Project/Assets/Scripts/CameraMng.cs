@@ -23,9 +23,6 @@ public class CameraMng : MonoBehaviour {
         y = angles.x;
     }
 
-
-
-
     void Update()
     {
         Vector3 angles = transform.localEulerAngles;
@@ -60,8 +57,6 @@ public class CameraMng : MonoBehaviour {
 
             y -= Input.GetAxis("Mouse Y") * ySpeed;
             y = Mathf.Clamp(y, yMinLimit, yMaxLimit);
-
-
             x += Input.GetAxis("Mouse X") * xSpeed;
 
             transform.eulerAngles = new Vector3(y, x, 0);

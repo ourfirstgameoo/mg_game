@@ -10,6 +10,8 @@ public class godA : MonoBehaviour
     private float timer = 0;
     public GameObject bulletPrefab;
     public Transform firePos;
+    private Animation ani;
+    public GameObject god;
 
     void OnTriggerEnter(Collider other)
     {
@@ -25,6 +27,11 @@ public class godA : MonoBehaviour
         {
             enemys.Remove(other.gameObject);
         }
+    }
+
+    void Start()
+    {
+        ani = this.GetComponent<Animation>();
     }
 
     //rate-> attackRate
@@ -43,12 +50,13 @@ public class godA : MonoBehaviour
         //     doSomething();
         //     timer += rate;
         // }  
-        //头部转向敌人      
-        // if(enemys.Count > 0 &&enemys[0] != null)
-        // {
-        //     Vector3 targetPosition = enemys[0].transform.position;
-        //     targetPosition.y = head
-        // }
+        // 头部转向敌人      
+        if(enemys.Count > 0 && enemys[0] != null)
+        {
+            Vector3 targetPosition = enemys[0].transform.position;
+            targetPosition.y = god.transform.position.y;
+            god.transform.LookAt(targetPosition);
+        }
     }
 
     //attack
@@ -61,6 +69,9 @@ public class godA : MonoBehaviour
         }
         if(enemys.Count > 0)
         {
+            if(enemys.Count == 0)
+                UpdateEnemys();
+            ani.Play("Attack1");
             GameObject bullet = GameObject.Instantiate(bulletPrefab, firePos.position, firePos.rotation);
             bullet.GetComponent<Bullet>().setTatget(enemys[0].transform);
         }

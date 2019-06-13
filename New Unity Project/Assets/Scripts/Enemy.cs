@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
     private Transform[] positions;
     private int index = 0;
     public float speed = 10;

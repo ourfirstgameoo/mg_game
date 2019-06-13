@@ -48,12 +48,19 @@ public class GuardMng : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Building")))
             {
                 Building building = hit.collider.GetComponentInParent<Building>();
+                if(building.gods.Count == 0)
+                {
+                    Vector3 pos = building.transform.position;
+                    pos.y += 5;
+                    // building.transform.position.y += 20;
+                    GameObject.Instantiate(guardData.GuardPrefab, pos, Quaternion.identity);
 
-                if (building == null){
-                    Debug.Log("building is none");
-                    return;
+                    if (building == null){
+                        Debug.Log("building is none");
+                        return;
+                    }
+                    building.addGod(guardData.GuardPrefab);
                 }
-                building.addGod(guardData.GuardPrefab);
             }
         }
     }
