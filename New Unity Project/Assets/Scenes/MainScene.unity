@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.3731199, g: 0.3807403, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731195, g: 0.3807401, b: 0.35872737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36741,7 +36741,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   redData:
-    buildingPrefab: {fileID: 100000, guid: 0a684e010d24433429abd6918f0f3bf6, type: 3}
+    buildingPrefab: {fileID: 5659628358432628562, guid: f8436a13b5b92024584253ca3bbbea4c,
+      type: 3}
     cost: 0
     type: 2
     buildingMaskUnits: 1
@@ -54969,17 +54970,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3401400971326532442, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7754e9d4a5fa81a4cb65a7e2133c959c, type: 2}
     - target: {fileID: 426609734597037540, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
       propertyPath: selectedPrefab
       value: 
       objectReference: {fileID: 7714398622920680022, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
+    - target: {fileID: 3401400971326532442, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7754e9d4a5fa81a4cb65a7e2133c959c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b05ed6c43b0b2540b4fe06b606918e2, type: 3}
 --- !u!1001 &1304931665
@@ -87716,17 +87717,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3401400971326532442, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7754e9d4a5fa81a4cb65a7e2133c959c, type: 2}
     - target: {fileID: 426609734597037540, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
       propertyPath: selectedPrefab
       value: 
       objectReference: {fileID: 7714398622920680022, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
+    - target: {fileID: 3401400971326532442, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7754e9d4a5fa81a4cb65a7e2133c959c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b05ed6c43b0b2540b4fe06b606918e2, type: 3}
 --- !u!4 &8067928221244206456 stripped

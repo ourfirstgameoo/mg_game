@@ -12,8 +12,8 @@ public class GuardMng : MonoBehaviour
     private GuardData guardData;
     public ButtonCtrl buttonCtrl;
 
-    public List<GameObject> totalgods = new List<GameObject>();
-
+    public List<GameObject> totalDayGods = new List<GameObject>();
+    public List<GameObject> totalNightGods = new List<GameObject>();
 
     public void OnGuard1Selected(bool isOn)
     {
@@ -51,19 +51,21 @@ public class GuardMng : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100, LayerMask.GetMask("Building")))
             {
                 Building building = hit.collider.GetComponentInParent<Building>();
-                if(building.gods.Count == 0)
+                if(building.god == null)
                 {
-                    Vector3 pos = building.transform.position;
-                    pos.y += 5;
-                    // building.transform.position.y += 20;
-                    GameObject obj  = GameObject.Instantiate(guardData.GuardPrefab, pos, Quaternion.identity);
-
-                    if (building == null){
-                        Debug.Log("building is none");
-                        return;
+                    if(guardData == Guard1st){
+                        building.god1Day.SetActive(true);
+                        totalDayGods.Add(building.god1Day);
+                        totalNightGods.Add(building.god1Night);
                     }
-                    building.addGod(guardData.GuardPrefab);
-                    totalgods.Add(obj);
+                    else if(guardData == Guard2nd){
+                        building.god2Day.SetActive(true);
+                        totalDayGods.Add(building.god2Day);
+                        totalNightGods.Add(building.god2Night);
+                    }
+
+                    building.god = guardData.GuardPrefab;
+                    // building.addGod(guardData.GuardPrefab);
                 }
             }
         }
@@ -71,17 +73,19 @@ public class GuardMng : MonoBehaviour
 
     public void godAwake()
     {
-        for(int i = 0; i < totalgods.Count; i++)
+        for(int i = 0; i < totalDayGods.Count; i++)
         {
-            totalgods[i].SetActive(true);
+            totalNightGods[i].SetActive(true);
+            totalDayGods[i].SetActive(false);
         }  
     }
 
     public void godSleep()
     {
-        for (int i = 0; i < totalgods.Count; i++)
+        for (int i = 0; i < totalDayGods.Count; i++)
         {
-            totalgods[i].SetActive(true);
+            totalNightGods[i].SetActive(false);
+            totalDayGods[i].SetActive(true);
         }
     }
 }

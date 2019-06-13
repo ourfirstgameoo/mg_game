@@ -43,6 +43,10 @@ public class godA : MonoBehaviour
             timer = 0;
             doSomething();
         }
+        if(enemys.Count == 0)
+        {
+            ani.Play("Idle");
+        }
         // if (timer > 0)
         //     timer -= Time.deltaTime;
         // if (timer <= rate && enemys.Count > 0)

@@ -11,7 +11,7 @@ public class LeiGong : MonoBehaviour
     // public Transform firePos;
     private Animation ani;
     public GameObject god;
-    public GameObject speedDecrease;
+    public GameObject effect;
 
     void OnTriggerEnter(Collider other)
     {
@@ -32,16 +32,26 @@ public class LeiGong : MonoBehaviour
     void Start()
     {
         ani = this.GetComponent<Animation>();
+        ani["Attack2"].speed = 2;
     }
 
     private void Update()
     {
         timer += Time.deltaTime;
-        if(enemys.Count > 0 && timer > rate)
+        if(timer > rate)
         {
             timer = 0;
             doSomething();
         }
+        // if(enemys.Count > 0 && timer > rate)
+        // {
+        //     timer = 0;
+        //     doSomething();
+        // }
+        // if(enemys.Count == 0)
+        // {
+        //     ani.Play("Idle");
+        // }
         // if (timer > 0)
         //     timer -= Time.deltaTime;
         // if (timer <= rate && enemys.Count > 0)
@@ -61,26 +71,26 @@ public class LeiGong : MonoBehaviour
     //attack
     void doSomething()
     {
-        if(enemys[0] == null)
-        {
-            UpdateEnemys();
-        }
-        if(enemys.Count > 0)
-        {
-            if(enemys.Count == 0)
-                UpdateEnemys();
+        // if(enemys[0] == null)
+        // {
+        //     UpdateEnemys();
+        // }
+        // if(enemys.Count > 0)
+        // {
+        //     if(enemys.Count == 0)
+        //         UpdateEnemys();
+            // Debug.Log(ani["Attack2"].speed);
             ani.Play("Attack2");
-            Quaternion rotation = enemys[0].transform.rotation;
-            rotation.x += 1;
-            GameObject effect = GameObject.Instantiate(speedDecrease, enemys[0].transform.position, rotation);
-            Destroy(effect, 5);
-            // GameObject bullet = GameObject.Instantiate(bulletPrefab, firePos.position, firePos.rotation);
-            // bullet.GetComponent<Bullet>().setTatget(enemys[0].transform);
-        }
-        else
-        {
-            timer = rate;
-        }
+            GameObject e = GameObject.Instantiate(effect, transform.position, transform.rotation);
+            // Quaternion rotation = enemys[0].transform.rotation;
+            // rotation.x += 1;
+            // GameObject effect = GameObject.Instantiate(speedDecrease, enemys[0].transform.position, rotation);
+            // Destroy(effect, 5);
+        // }
+        // else
+        // {
+        //     timer = rate;
+        // }
         
         
     }

@@ -12,6 +12,5 @@ public class DayNightController : MonoBehaviour
     {
         transform.Rotate(Vector3.left * rotateSpeed * Time.deltaTime, Space.Self);
         pointer.transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime, Space.Self);
-
     }
 }

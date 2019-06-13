@@ -11,9 +11,8 @@ public class GodCtrl : MonoBehaviour
     {
         if(building.tag == "Building")
         {
-    		Debug.Log(building);
-            // buildings.Add(building.gameObject);
-            buildings.Add(building.GetComponentInParent<Building>());
+    		// Debug.Log("initialize a new building!!!");
+            buildings.Add(building.GetComponent<Building>());
         }
     }
 
@@ -41,12 +40,8 @@ public class GodCtrl : MonoBehaviour
     	Debug.Log("ere!!!");
     	for(int i=0; i < buildings.Count; i++)
     	{
-    		if(buildings[i].gods.Count > 0)
-    		{
-    			Debug.Log(buildings[i].transform);
-    		}
-    		Debug.Log(buildings[i].transform);
+    		;
     	}
     }
-    
+
 }

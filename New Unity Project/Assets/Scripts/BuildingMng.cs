@@ -117,6 +117,7 @@ public class BuildingMng : MonoBehaviour
             // pos.z -= 0.5f;
         }
         roration.x -= 1;
+        
         GameObject.Instantiate(selectedData.buildingPrefab, pos, roration);
         GameObject effect = GameObject.Instantiate(selectedData.buildEffect, position, Quaternion.Euler(-90, 0, 0));
         Destroy(effect, 2.5f);
