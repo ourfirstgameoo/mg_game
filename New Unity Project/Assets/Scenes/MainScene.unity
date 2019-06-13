@@ -33398,32 +33398,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy:
-    - {fileID: 8128270896916742617, guid: b82ac89b324c26b429de63a9aa740db7, type: 3}
-    - {fileID: 1425967141568690391, guid: 9a0474854d027bd4982ac7ec1552cf88, type: 3}
-    - {fileID: 6799147785002720014, guid: 5ca8b06ff1786a04786ed343856c0798, type: 3}
-    - {fileID: 3045416197125976995, guid: df14b033081393e499a7b27ae23aac95, type: 3}
+    - {fileID: 100124, guid: b99cdc44e1d6f6441a71bae37ccb5563, type: 3}
     count: 1
     rate: 0
   - enemy:
-    - {fileID: 8128270896916742617, guid: 1e26fd6c04180d84db1a07e3f3bf19a2, type: 3}
-    - {fileID: 1425967141568690391, guid: 74c1d90cc38e3994daf33fc71977b574, type: 3}
-    - {fileID: 6799147785002720014, guid: 57822d3829a4d8d4fbe90cc336fc16f3, type: 3}
-    - {fileID: 3045416197125976995, guid: 36756ed65fd9b5b4c8d1349628733660, type: 3}
+    - {fileID: 100124, guid: b99cdc44e1d6f6441a71bae37ccb5563, type: 3}
     count: 3
     rate: 0.2
   - enemy:
-    - {fileID: 8128270896916742617, guid: 075ace87de87eb549abcfe8691b57b01, type: 3}
-    - {fileID: 1425967141568690391, guid: 4b64f75373b477044a8e7826f577ff9e, type: 3}
-    - {fileID: 6799147785002720014, guid: 0f5399a1667a8fd4d977b5f9c6644383, type: 3}
-    - {fileID: 3045416197125976995, guid: 3a86d7ae4f817c046b12dad7d37b2b3e, type: 3}
+    - {fileID: 100124, guid: b99cdc44e1d6f6441a71bae37ccb5563, type: 3}
     count: 6
     rate: 0.2
   - enemy:
-    - {fileID: 8128270896916742617, guid: edd07b1d6918d4548a91091d77a1f317, type: 3}
-    - {fileID: 1425967141568690391, guid: 81bdef5e956f4d44eb8e4f22bbd321e2, type: 3}
-    - {fileID: 6799147785002720014, guid: 2067c9d59cf8d544981d0637cc673c28, type: 3}
-    - {fileID: 3045416197125976995, guid: 65a126b56b7dbf74298e3bc27cd77037, type: 3}
-    count: 8
+    - {fileID: 100124, guid: b99cdc44e1d6f6441a71bae37ccb5563, type: 3}
+    count: 6
     rate: 0.2
   waveRate: 5
   startPoint:
