@@ -15,8 +15,6 @@ public class DayCtr : MonoBehaviour
             // Debug.Log("isDay");
             isNight = false;
             GameObject.Find("gameMng").GetComponent<GuardMng>().godSleep();
-            GameObject.Find("gameMng").GetComponent<bgMusicSwitch>().changeAudio(0);
-
         }
         else if (transform.position.y < 0 && !isNight)
         {
@@ -24,7 +22,6 @@ public class DayCtr : MonoBehaviour
             isNight = true;
             GameObject.Find("gameMng").GetComponent<GuardMng>().godAwake();
             GameObject.Find("gameMng").GetComponent<EnemySpawner>().enemyAwake();
-            GameObject.Find("gameMng").GetComponent<bgMusicSwitch>().changeAudio(1);
 
         }
     }
