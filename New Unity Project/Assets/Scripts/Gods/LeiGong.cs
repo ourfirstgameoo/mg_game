@@ -5,19 +5,19 @@ using UnityEngine;
 public class LeiGong : MonoBehaviour
 {
     // Start is called before the first frame update
-    private List<GameObject> enemys = new List<GameObject>();
+    private List<Enemy> enemys = new List<Enemy>();
     public float rate = 1;
     private float timer = 0;
-    // public Transform firePos;
     private Animation ani;
     public GameObject god;
-    public GameObject effect;
+    public GameObject skill;
+    private float attackIdletime = 0;
 
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy")
         {
-            enemys.Add(other.gameObject);
+            enemys.Add(other.GetComponent<Enemy>());
         }
     }
 
@@ -25,7 +25,7 @@ public class LeiGong : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            enemys.Remove(other.gameObject);
+            enemys.Remove(other.GetComponent<Enemy>());
         }
     }
 
@@ -37,28 +37,18 @@ public class LeiGong : MonoBehaviour
 
     private void Update()
     {
+        if(enemys.Count == 0 && attackIdletime > 1)
+        {
+            ani.Play("Idle");
+        }
+
         timer += Time.deltaTime;
-        if(timer > rate)
+        attackIdletime += Time.deltaTime;
+        if(enemys.Count > 0 && timer > rate)
         {
             timer = 0;
             doSomething();
         }
-        // if(enemys.Count > 0 && timer > rate)
-        // {
-        //     timer = 0;
-        //     doSomething();
-        // }
-        // if(enemys.Count == 0)
-        // {
-        //     ani.Play("Idle");
-        // }
-        // if (timer > 0)
-        //     timer -= Time.deltaTime;
-        // if (timer <= rate && enemys.Count > 0)
-        // {
-        //     doSomething();
-        //     timer += rate;
-        // }  
         // 头部转向敌人      
         if(enemys.Count > 0 && enemys[0] != null)
         {
@@ -71,26 +61,31 @@ public class LeiGong : MonoBehaviour
     //attack
     void doSomething()
     {
-        // if(enemys[0] == null)
-        // {
-        //     UpdateEnemys();
-        // }
-        // if(enemys.Count > 0)
-        // {
-        //     if(enemys.Count == 0)
-        //         UpdateEnemys();
-            // Debug.Log(ani["Attack2"].speed);
+        if(enemys[0] == null)
+        {
+            UpdateEnemys();
+        }
+        if(enemys.Count > 0)
+        {
+            if(enemys.Count == 0)
+                UpdateEnemys();
+
+            attackIdletime = 0;
             ani.Play("Attack2");
-            GameObject e = GameObject.Instantiate(effect, transform.position, transform.rotation);
-            // Quaternion rotation = enemys[0].transform.rotation;
-            // rotation.x += 1;
-            // GameObject effect = GameObject.Instantiate(speedDecrease, enemys[0].transform.position, rotation);
+            Quaternion rotation = skill.transform.rotation;
+            // rotation.x += 180;
+            // rotation.y += 180;
+            // rotation.z += 180;
+            Vector3 pos = enemys[0].transform.position;
+            // pos.y -= 10;
+            GameObject effect = GameObject.Instantiate(skill, pos, rotation);
+            enemys[0].takeDamage(1);
             // Destroy(effect, 5);
-        // }
-        // else
-        // {
-        //     timer = rate;
-        // }
+        }
+        else
+        {
+            timer = rate;
+        }
         
         
     }

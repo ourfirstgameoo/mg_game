@@ -29,8 +29,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log(transform.position);
-        // Debug.Log(positions[index].position);
         Move();
     }
 
@@ -39,20 +37,11 @@ public class Enemy : MonoBehaviour
         if (index > positions.Length - 1) return;
         transform.LookAt(positions[index]);
         transform.Translate(0,0, Time.deltaTime * speed);
-        // enemy.transform.LookAt(positions[index].position);
-        // Vector3 targetPosition = positions[index].position;
-        // targetPosition.y = enemy.transform.position.y;
-        // enemy.transform.LookAt(targetPosition);
 
         ani.Play("Run");
         if(Vector3.Distance(positions[index].position, transform.position) < 0.2f)
         {
             index++;
-        // enemy.transform.LookAt(positions[index].position);
-            // Debug.Log(positions[index].position);
-            // Vector3 targetPosition = positions[index].position;
-            // targetPosition.y = enemy.transform.position.y;
-            // enemy.transform.LookAt(targetPosition);
         }
     }
 
@@ -74,8 +63,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        // GameObject effect = GameObject.Instantiate(explosionEffect, transform.position, transform.rotation);
-        // Destroy(effect, 1);
+        ani.Play("Death");
         Destroy(this.gameObject);
     }
 }

@@ -2233,4 +2233,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rate: 1
   god: {fileID: 100124}
-  effect: {fileID: 145812, guid: cc363714cd89f4a40980ef6a274682c7, type: 3}
+  skill: {fileID: 2379322876884538400, guid: bed84f8da3c514842b7f2c6a4bc70f21, type: 3}

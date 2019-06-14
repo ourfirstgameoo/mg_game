@@ -20,7 +20,6 @@ public class EnemySpawner : MonoBehaviour
         waveCtr[2] = new int[3, 6] { { 7, 5, 3, 2, 0, 0 }, { 7, 6, 5, 2, 0, 0 }, { 8, 6, 5, 3, 1, 0 } };
         waveCtr[3] = new int[3, 6] { { 8, 5, 3, 2, 2, 0 }, { 8, 5, 5, 4, 2, 0 }, { 8, 6, 5, 4, 2, 1 } };
         waveCtr[4] = new int[3, 6] { { 8, 8, 4, 5, 3, 3 }, { 8, 10, 6, 5, 4, 4 }, { 8, 10, 8, 7, 6, 5 } };
-
     }
 
 
@@ -30,11 +29,8 @@ public class EnemySpawner : MonoBehaviour
         day++;
     }
 
-
-
     IEnumerator SpawnEnemy()
     {
-
         for(int i = 0; i < 3; i++)
         {
             for(int j = 0; j < 6; j++)

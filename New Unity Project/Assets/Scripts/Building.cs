@@ -9,8 +9,10 @@ public class Building : MonoBehaviour
     public int type;
     public GameObject god1Day;
     public GameObject god2Day;
+    public GameObject god3Day;
     public GameObject god1Night;
     public GameObject god2Night;
+    public GameObject god3Night;
 
     // public void addGod(GameObject god)
     // {

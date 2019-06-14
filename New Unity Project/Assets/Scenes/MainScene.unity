@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.3731199, g: 0.3807403, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731195, g: 0.3807401, b: 0.35872737, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -36782,7 +36782,6 @@ MonoBehaviour:
     - {fileID: 100114, guid: 0c41c9733dee5954fbc0cd6f09561576, type: 3}
     - {fileID: 100114, guid: 053b821023d2398438e507ae643f3e55, type: 3}
     - {fileID: 100114, guid: 428850b15a9619647958316bc9fbfb6a, type: 3}
-  waveRate: 1.5
   startPoint:
   - {fileID: 261355172}
   - {fileID: 1304199524}
@@ -45455,17 +45454,17 @@ PrefabInstance:
     - target: {fileID: 8067928221244206456, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067928221244206456, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067928221244206456, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8067928221244206456, guid: 6b05ed6c43b0b2540b4fe06b606918e2,
         type: 3}
@@ -87912,6 +87911,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slider
       objectReference: {fileID: 0}
+    - target: {fileID: 4271928569324877046, guid: 659aba8bc31a53e4081e4a047e419ee2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271928569324877046, guid: 659aba8bc31a53e4081e4a047e419ee2,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8218008714497611168, guid: 659aba8bc31a53e4081e4a047e419ee2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88016,16 +88025,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4271928569324877046, guid: 659aba8bc31a53e4081e4a047e419ee2,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4271928569324877046, guid: 659aba8bc31a53e4081e4a047e419ee2,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 659aba8bc31a53e4081e4a047e419ee2, type: 3}

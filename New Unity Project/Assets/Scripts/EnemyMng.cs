@@ -6,5 +6,4 @@ using UnityEngine;
 public class EnemyMng
 {
     public GameObject[] enemy = new GameObject[4];
-
 }

@@ -63,7 +63,11 @@ public class GuardMng : MonoBehaviour
                         totalDayGods.Add(building.god2Day);
                         totalNightGods.Add(building.god2Night);
                     }
-
+                    else if(guardData == Guard3rd){
+                        building.god3Day.SetActive(true);
+                        totalDayGods.Add(building.god3Day);
+                        totalNightGods.Add(building.god3Night);
+                    }
                     building.god = guardData.GuardPrefab;
                     // building.addGod(guardData.GuardPrefab);
                 }

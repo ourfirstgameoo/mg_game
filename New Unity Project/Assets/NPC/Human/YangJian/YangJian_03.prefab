@@ -3220,7 +3220,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 7.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3867383589885386879
 MonoBehaviour:
@@ -3235,10 +3235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rate: 0.5
-  bulletPrefab: {fileID: 4648261882983585321, guid: 2553872b4424bd94aba438a1854a0916,
-    type: 3}
   firePos: {fileID: 5858316975119932041}
   god: {fileID: 100166}
+  skill: {fileID: 1453484383211382021, guid: 004527d130e87464e8136e3723e2b2a4, type: 3}
 --- !u!1 &100168
 GameObject:
   m_ObjectHideFlags: 0

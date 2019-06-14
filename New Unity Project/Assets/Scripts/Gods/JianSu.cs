@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class godA : MonoBehaviour
+public class JianSu : MonoBehaviour
 {
-    // Start is called before the first frame update
     private List<GameObject> enemys = new List<GameObject>();
     public float rate = 1;
     private float timer = 0;
-    public GameObject bulletPrefab;
-    public Transform firePos;
     private Animation ani;
     public GameObject god;
+    public GameObject skill;
+    private float attackIdletime = 0;
 
     void OnTriggerEnter(Collider other)
     {
@@ -32,28 +31,24 @@ public class godA : MonoBehaviour
     void Start()
     {
         ani = this.GetComponent<Animation>();
+        ani["Attack1"].speed = 2;
     }
 
-    //rate-> attackRate
     private void Update()
     {
+    	if(enemys.Count == 0)
+        {
+            ani.Play("Idle");
+        }
+
         timer += Time.deltaTime;
+        attackIdletime += Time.deltaTime;
         if(enemys.Count > 0 && timer > rate)
         {
             timer = 0;
             doSomething();
         }
-        if(enemys.Count == 0)
-        {
-            ani.Play("Idle");
-        }
-        // if (timer > 0)
-        //     timer -= Time.deltaTime;
-        // if (timer <= rate && enemys.Count > 0)
-        // {
-        //     doSomething();
-        //     timer += rate;
-        // }  
+        
         // 头部转向敌人      
         if(enemys.Count > 0 && enemys[0] != null)
         {
@@ -66,7 +61,6 @@ public class godA : MonoBehaviour
     //attack
     void doSomething()
     {
-        // Debug.Log("attack");
         if(enemys[0] == null)
         {
             UpdateEnemys();
@@ -75,16 +69,16 @@ public class godA : MonoBehaviour
         {
             if(enemys.Count == 0)
                 UpdateEnemys();
+
             ani.Play("Attack1");
-            GameObject bullet = GameObject.Instantiate(bulletPrefab, firePos.position, firePos.rotation);
-            bullet.GetComponent<Bullet>().setTatget(enemys[0].transform);
+            Vector3 pos = enemys[0].transform.position;
+            GameObject effect = GameObject.Instantiate(skill, pos, skill.transform.rotation);
+            Destroy(effect, 3);
         }
         else
         {
             timer = rate;
         }
-        
-        
     }
 
     void UpdateEnemys()

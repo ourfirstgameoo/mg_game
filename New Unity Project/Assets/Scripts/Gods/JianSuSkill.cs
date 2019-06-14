@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class slowdebuff : MonoBehaviour
+public class JianSuSkill : MonoBehaviour
 {
     private List<Enemy> enemys = new List<Enemy>();
     private float timer = 0;
     private double rate = 0.5;
-
 
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
@@ -28,12 +27,10 @@ public class slowdebuff : MonoBehaviour
     }
     private void Update()
     {
-        // Debug.Log("Update!!!");
         timer += Time.deltaTime;
         if(enemys.Count > 0 && timer > rate)
         {
             timer = 0;
-            Debug.Log("damage!!!");
             for(int i=0; i < enemys.Count; i++)
                 enemys[i].takeDamage((float)rate);
         }
