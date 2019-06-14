@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     
     public Transform[] startPoint = new Transform[4];
     private int day = 0;
+    private Coroutine coroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +26,13 @@ public class EnemySpawner : MonoBehaviour
 
     public void enemyAwake()
     {
-        StartCoroutine(SpawnEnemy());
+        coroutine = StartCoroutine(SpawnEnemy());
         day++;
+    }
+
+    public void Stop()
+    {
+        StopCoroutine(coroutine);
     }
 
     IEnumerator SpawnEnemy()
@@ -47,6 +53,7 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(waveRate);
 
         }
+        GameMng.Instance.Win();
         /*
         foreach(EnemyMng wave in waves)
         {

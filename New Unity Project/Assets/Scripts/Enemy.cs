@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     public int randPathNum = 2;
     private float totalHp;
     public float hp = 5;
-    // public GameObject explosionEffect;
     public Slider hpSlider;
     private Animation ani;
     public GameObject enemy;
@@ -61,7 +60,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void Die()
+    public void Die()
     {
         ani.Play("Death");
         Destroy(this.gameObject);
